@@ -1,0 +1,11 @@
+app-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100vw;
+}
+
+
+.orange{
+    color: rgb(255, 153, 0);
+}
