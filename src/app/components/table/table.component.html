@@ -1,0 +1,26 @@
+<table class="table table-sm table-striped table-hover table-bordered">
+    <thead>
+        <tr>
+            <th scope="col" *ngFor="let header of headers">{{header}}</th>
+            <th scope="col" *ngIf="showCancel && headers.length>0">Cancel</th>
+            <th scope="col" *ngIf="headers.length>0 && showEdit">Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of data; let i = index">
+            <td *ngFor="let header of headers">
+                <ng-container *ngIf="isStringOrNumber(row[header])">
+                  {{row[header]}}
+                </ng-container>
+                <ng-container *ngIf="!isStringOrNumber(row[header])">
+                    {{row[header]['name']}}
+                  </ng-container>
+              </td>
+              
+            
+                <td *ngIf="showCancel" (click)="cancelFunction(row)"><button>🗙</button></td>
+            
+                <td *ngIf="showEdit" (click)="editFunction(row)"><button>✏️</button></td>
+        </tr>
+    </tbody>
+</table>

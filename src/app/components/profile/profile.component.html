@@ -1,0 +1,55 @@
+
+<button class="show-btn" (click)="toggleDashboard()" *ngIf="mobileView"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="32px" width="32px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M3 18h13v-2H3v2zm0-5h10v-2H3v2zm0-7v2h13V6H3zm18 9.59L17.42 12 21 8.41 19.59 7l-5 5 5 5L21 15.59z"></path></svg></button>
+
+<div class="d-flex g-5">
+    <app-dashboard *ngIf="showDashboard"></app-dashboard>
+    <div class="container my-5">
+        <div class="profile-details">
+            <div class="profile-image">
+                <img src="../../../assets/default-avatar.jpg" alt="Profile Image" class="img-fluid">
+            </div>
+            <div class="profile-info">
+                <form [formGroup]="profileForm">
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" id="name" class="form-control" formControlName="name">
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" class="form-control" formControlName="email">
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="city">City</label>
+                      <input type="text" id="city" class="form-control" formControlName="city">
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="dob">DOB</label>
+                      <input type="date" id="dob" class="form-control" formControlName="dob">
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="phone">Phone</label>
+                      <input type="tel" id="phone" class="form-control" formControlName="phone">
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="role">Role</label>
+                      <input type="text" id="role" class="form-control" [value]="role" readonly>
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="bio">Bio</label>
+                      <textarea id="bio" class="form-control" formControlName="userDetail"></textarea>
+                    </div>
+                  
+                    <button type="submit" class="button my-3" (click)="updateProfile(id)">Submit</button>
+                  </form>
+                  
+            </div>
+        </div>
+    </div>
+
+</div>

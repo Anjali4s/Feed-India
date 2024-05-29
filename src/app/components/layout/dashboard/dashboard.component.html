@@ -1,0 +1,74 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-light dashboard" style="width: 280px; user-select: auto; min-height: 100vh;">
+    <hr style="user-select: auto;">
+    <ul class="nav nav-pills flex-column mb-auto" style="user-select: auto;">
+      <li class='active' [routerLinkActive]="['active']" style="user-select: auto;">
+        <a routerLink="/profile" class="nav-link link-dark" style="user-select: auto;">
+          <svg class="bi me-2" width="16" height="16" style="user-select: auto;"><use xlink:href="#speedometer2" style="user-select: auto;"></use></svg>
+          Profile
+        </a>
+      </li>
+      <li [routerLinkActive]="['active']" style="user-select: auto;" *ngIf='this.user?.role?.role==="USER"'>
+        <a routerLink="/orders" class="nav-link link-dark" style="user-select: auto;">
+          <svg class="bi me-2" width="16" height="16" style="user-select: auto;"><use xlink:href="#table" style="user-select: auto;"></use></svg>
+          My Orders
+        </a>
+      </li>
+
+      <li [routerLinkActive]="['active']" style="user-select: auto;" *ngIf='this.user?.role?.role==="ADMIN"'>
+        <a routerLink="/all/orders" class="nav-link link-dark" style="user-select: auto;">
+          <svg class="bi me-2" width="16" height="16" style="user-select: auto;"><use xlink:href="#grid" style="user-select: auto;"></use></svg>
+          All Orders
+        </a>
+      </li>
+
+
+      <li [routerLinkActive]="['active']" style="user-select: auto;" *ngIf='this.user?.role?.role==="USER"'>
+        <a routerLink="/my/donations" class="nav-link link-dark" style="user-select: auto;">
+          <svg class="bi me-2" width="16" height="16" style="user-select: auto;"><use xlink:href="#grid" style="user-select: auto;"></use></svg>
+          My Donations
+        </a>
+      </li>
+
+      <li [routerLinkActive]="['active']" style="user-select: auto;" *ngIf='this.user?.role?.role==="ADMIN"'>
+        <a routerLink="/all/donations" class="nav-link link-dark" style="user-select: auto;">
+          <svg class="bi me-2" width="16" height="16" style="user-select: auto;"><use xlink:href="#grid" style="user-select: auto;"></use></svg>
+          All Donations
+        </a>
+      </li>
+
+
+      <li [routerLinkActive]="['active']"  style="user-select: auto;" *ngIf='this.user?.role?.role==="USER"'>
+        <a routerLink="/my/requests" class="nav-link link-dark" style="user-select: auto;">
+          <svg class="bi me-2" width="16" height="16" style="user-select: auto;"><use xlink:href="#people-circle" style="user-select: auto;"></use></svg>
+          My Food Request
+        </a>
+      </li>
+
+
+      <li [routerLinkActive]="['active']" style="user-select: auto;" *ngIf='this.user?.role?.role==="ADMIN"'>
+        <a routerLink="/all/requests" class="nav-link link-dark" style="user-select: auto;">
+          <svg class="bi me-2" width="16" height="16" style="user-select: auto;"><use xlink:href="#grid" style="user-select: auto;"></use></svg>
+          All Requests
+        </a>
+      </li>
+
+
+      <li [routerLinkActive]="['active']" style="user-select: auto;" *ngIf='this.user?.role?.role==="USER"'>
+        <a routerLink="/transactions" class="nav-link link-dark" style="user-select: auto;">
+          <svg class="bi me-2" width="16" height="16" style="user-select: auto;"><use xlink:href="#people-circle" style="user-select: auto;"></use></svg>
+          My Transactions
+        </a>
+      </li>
+
+      <li [routerLinkActive]="['active']" style="user-select: auto;" *ngIf='this.user?.role?.role==="ADMIN"'>
+        <a routerLink="/all/transactions" class="nav-link link-dark" style="user-select: auto;">
+          <svg class="bi me-2" width="16" height="16" style="user-select: auto;"><use xlink:href="#grid" style="user-select: auto;"></use></svg>
+          All Transactions
+        </a>
+      </li>
+
+      
+    </ul>
+    <hr style="user-select: auto;">
+  </div>
+

@@ -1,0 +1,67 @@
+
+<button class="filter-btn mx-3" (click)="toggleFilter()" *ngIf="!showFilter">
+  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+    <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+  </svg>
+</button>
+<div class=" main">
+    <div class="d-flex">
+        <form class="mx-auto ml-3 form-custom" [formGroup]="filterForm" (ngSubmit)="onSubmit()" *ngIf="showFilter">
+            <div class="mb-3">
+                <label for="city" class="col-form-label">City<span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="city" placeholder="Enter city" formControlName="city">
+              <div class="text-danger" *ngIf="!filterForm.valid">City can not be empty</div>
+            </div>
+    
+            <div class="mb-3">
+                <label for="date" class="col-form-label">date</label>
+                <input type="date" class="form-control" id="date" placeholder="Enter date" formControlName="date">
+            </div>
+    
+            <div class="form-group">
+                <label for="foodType" class="col-form-label">Food Type</label>
+                <select class="form-control" id="foodType" formControlName="foodType">
+                    <option *ngFor="let foodTypeKey of foodTypes" [value]="foodTypeKey">{{foodTypeKey}}</option>
+                </select>
+            </div>
+            
+            <div class="d-flex">
+                <button type="submit" class="button my-3">Apply</button>
+                <button class="button my-3 mx-3" (click)="toggleFilter()">Cancel</button>
+            </div>
+            
+          </form>
+
+          <div class="image" *ngIf="error!==null">
+            <img src="../../../assets/no-food.png" alt="No food Available" class="img img-fluid" *ngIf="error!==null">
+          </div>
+          
+          <div class="container-fluid d-flex mx-3 my-4 food-container" *ngIf="foods.length>0">
+            <div *ngFor="let food of foods; let i = index">
+                <a routerLink="/food/{{food.id}}">
+                    <div class="card" style="width: 18rem; max-height: 350px;"  >
+                        <img [src]="'../../../assets/'+(food.foodType==='VEG'?'veg':'nonveg') + ((food.id)%5+1)+'.jpg'" class="card-img-top" alt="food image" style="object-fit: cover; height: fit-content;">
+                        <div class="card-body card-body-custom">
+                        <p class="fw-bold">{{food.foodName}}</p>
+                        <p class="food-detail text-muted fs-6">Food Type: <span class="fst-italic fw-bold" [ngStyle]="{'color': (food.foodType==='VEG' ? 'green' : 'red')}">{{food.foodType==='VEG'?'Veg':'Non-Veg'}}</span>
+                        </p>
+                        <p class="food-detail text-muted fs-6">Available on: <span class="fst-italic">{{food.pickupDate}}</span></p>
+                        <p class="food-detail text-muted fs-6">Amount: <span class="fst-italic">{{food.amount}}</span></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+          </div>
+    </div>
+</div>
+<nav aria-label="Page navigation example" *ngIf="foods.length>0">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <button class="page-link" (click)="previousPage()" [disabled]="page===0">Previous</button>
+      </li>
+      <li class="page-item "><span class="page-link">{{page+1}}</span></li>
+      <li class="page-item">
+        <button class="page-link" (click)="nextPage()" [disabled]="foods.length<15">Next</button>
+      </li>
+    </ul>
+  </nav>

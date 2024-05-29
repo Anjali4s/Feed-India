@@ -1,0 +1,42 @@
+app-dashboard{
+    height: 100vh;
+}
+
+app-table{
+    margin-top: 5vh;
+    margin-left: 1vw;
+    height: 90vh;
+    overflow-x: auto;
+    overflow-y: auto;
+    border-radius: 8px;
+}
+app-table::-webkit-scrollbar {
+    display: none;
+}
+img{
+    max-width: 600px;
+    max-height: 600px;
+}
+
+.show-btn {
+    position: fixed;
+    /* top: 1; */
+    left: 0;
+    z-index: 1000;
+
+}
+
+.button{
+    outline: none;
+    border: none;
+    background: inherit;
+}
+
+
+@media (max-width: 600px) {
+
+    app-dashboard{
+        position: fixed;
+        z-index: 9;
+    }
+}

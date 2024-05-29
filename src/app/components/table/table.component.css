@@ -1,0 +1,22 @@
+table{
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+table{
+    background-image: linear-gradient(130deg, #fafefe, #e0ecff);
+}
+
+thead{
+    background-image: linear-gradient(130deg, #dcfafa, #afcdfb);
+}
+tbody,tr,td,th{
+    background: transparent;
+}
+
+button{
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: auto;
+    font-size: 1.3rem;
+}

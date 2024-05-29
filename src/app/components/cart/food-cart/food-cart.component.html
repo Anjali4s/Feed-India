@@ -1,0 +1,35 @@
+<div class="container cart-container">
+  <div class="d-flex" *ngIf="cartItems.length===0">
+    <img src="../../../assets/cart.png" alt="" class="img img-fluid mx-auto my-auto">
+  </div>
+  <div class="row align-items-center" *ngFor="let item of cartItems">
+    <div class="col">
+      <img [src]="'../../../assets/'+(item.foodType==='VEG'?'veg':'nonveg') + ((item.id)%5 +1)+'.jpg'"
+        alt="Product Image" class="img-thumbnail">
+    </div>
+    <div class="col">
+      {{item.foodName}}
+    </div>
+    <div class="col">
+      {{item.foodType}}
+    </div>
+    <div class="col">
+      {{item.amount}}
+    </div>
+    <div class="col">
+      <button class="cancel-btn" (click)="removeItem(item.id)">❌</button>
+    </div>
+  </div>
+  <div class="d-flex justify-content-end align-items-center">
+    <div class="row mx-5">
+      <div class="col" *ngIf="cartItems.length>0">
+        <strong>Total: {{totalAmount()}}</strong>
+      </div>
+    </div>
+    <div class="row" *ngIf="cartItems.length>0">
+      <div class="col">
+        <a routerLink="/cart/food/address"><button class="button checkout-btn">Checkout</button></a>
+      </div>
+    </div>
+  </div>
+</div>

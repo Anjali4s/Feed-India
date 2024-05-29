@@ -1,0 +1,29 @@
+<div class="container mx-auto my-5">
+    <div class="food-details">
+        <div class="food-image">
+            <img [src]="'../../../assets/'+(requestDeatil?.foodType==='VEG'?'veg':'nonveg') + ((requestId)%5+1)+'.jpg'" alt="Food Image" class="img-fluid">
+        </div>
+        <div class="food-info">
+            <p><strong>Type:</strong> {{requestDeatil?.foodType}}</p>
+            <p><strong>Amount:</strong> {{requestDeatil?.amount}}</p>
+            <p><strong>City:</strong> {{requestDeatil?.city}}</p>
+            <p><strong>Delivery Address:</strong>{{requestDeatil?.pickupAddress}}</p>
+            <p><strong>Pickup Date:</strong> {{requestDeatil?.pickupDate}}</p>
+            <p><strong>Pickup Time:</strong> {{requestDeatil?.pickupTime}}</p>
+            <p><strong>message:</strong> {{requestDeatil?.message}}</p>
+            <div class="form-group">
+                <label for="quantity"><strong>Quantity:</strong></label>
+                <input type="number" id="quantity" name="quantity" min="0" max={{amount}} class="form-control" [(ngModel)]="quantity">
+                <button class="button my-2" (click)="addToCart()">Add to Cart</button>
+            </div>
+            
+        </div>
+
+        <div class="donor-detail">
+            <h2>Solicitor Details</h2>
+            <p><strong>Name:</strong> {{requestDeatil?.user?.name}}</p>
+            <p><strong>City:</strong> {{requestDeatil?.user?.city}}</p>
+            <p><strong>Email:</strong> {{requestDeatil?.user?.email}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+.profile-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin: auto;
+}
+.profile-image {
+    max-width: 10rem;
+    margin: auto;
+}
+.profile-info {
+    flex: 1;
+    margin: auto;
+}
+
+app-dashboard{
+    height: 100vh;
+}
+
+.show-btn {
+    position: fixed;
+    left: 0;
+    z-index: 1000;
+
+}
+
+.button {
+    outline: none;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    background-color: rgb(110, 158, 193);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.button:hover{
+    background-color: rgb(92, 140, 175);
+}
+
+.button:disabled{
+    cursor: not-allowed;
+}
+
+.show-btn{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+.form-control {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #bcbcbc;
+    border-radius: 0;
+    width: 50%;
+    background-color: transparent;
+  }
+
+input.form-control:active,
+input.form-control:focus,
+select.form-control:active,
+select.form-control:focus,
+textarea.form-control:active,
+textarea.form-control:focus {
+    outline: none;
+    border:none;
+    box-shadow: none;
+    border-bottom: 1px solid #a2a2a2;
+}
+
+@media screen and (max-width: 830px) {
+    .form-control {
+        width: 100%;
+      } 
+}
+  
+@media (max-width: 600px) {
+
+    .profile-details {
+        flex-direction: column;
+    }
+    img{
+        width: 90vw;
+    }
+
+    app-dashboard{
+        position: fixed;
+        z-index: 9;
+    }
+}

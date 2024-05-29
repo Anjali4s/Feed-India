@@ -1,0 +1,61 @@
+.container-fluid{
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.brand-logo{
+    width: 8vw;
+}
+.container-fluid{
+    padding: 0;
+}
+nav{
+    padding: 0.5rem 2rem 0.5rem 2rem;
+}
+
+.justify-content-end-md {
+    margin-right: 5rem; /* Adjust this value as needed */
+  }
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+      pointer-events: none;
+  }
+
+  .dropdown-menu {
+    width: 1rem !important;
+  }
+  
+
+.logout-btn{
+    outline: none;
+    border: none;
+    background-color: inherit;
+    color: rgb(209, 83, 0);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.active-page{
+    font-weight: bold;
+}
+.active-page>a{
+    color: rgb(64, 84, 105) !important;
+}
+
+@media screen and (max-width: 900px) {
+    .brand-logo{
+        width: 10vw;
+    }
+    
+    
+}
+
+@media screen and (max-width: 600px) {
+    .brand-logo{
+        width: 15vw;
+    }
+}

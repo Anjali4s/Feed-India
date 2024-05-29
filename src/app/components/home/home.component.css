@@ -1,0 +1,348 @@
+.banner{
+    background-image: url('../../../assets/banner.jpeg');
+    background-size: cover;
+    height: 80vh;
+    width: 100%;
+}
+.banner-heading{
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    padding-top: 12vh;
+    padding-left: 5vh;
+}
+
+.banner-text{
+    color: white;
+    font-size: 1.5rem;
+    padding-left: 5vh;
+    margin-top: 10vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    width: 60%;
+    background-color: rgba(188, 149, 94, 0.4);
+}
+
+.banner-btn-container{
+    margin: 2rem;
+}
+
+.banner-btn{
+    outline: none;
+    border: 2px solid white;
+    color: black;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+.banner-btn:hover {
+    background-color: rgb(177, 156, 127);
+    color: white;
+}
+
+
+.heading{
+    text-align: center;
+    padding-top: 5vh;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.share-details{
+    display: flex;
+    gap: 5%;
+    width: 70%;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+.icon{
+    width: 4rem;
+    height: 4rem;
+}
+
+.join{
+    display: flex;
+    gap: 5%;
+    width: 80%;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+.join-box{
+    display: flex;
+    align-items: start;
+}
+
+.join-box-text{
+    width: 80%;
+    margin: auto;
+}
+
+.heading-small{
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: auto;
+    margin-top: 2rem;
+    width: 60%;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.instruction-container{
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+    margin: auto;
+    margin-left: 30%;
+    margin-top: 15vh;
+}
+.instruction-container-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+    width: 50%;
+}
+
+.instruction-box{
+    margin: auto;
+    min-height: 30vh;
+    max-height: 30vh;
+}
+
+.steps{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.step{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    padding-top: 0.1rem;
+    margin: auto;
+}
+
+.line{
+    min-width: 0.1rem;
+    max-width: 0.1rem;
+    min-height: 40vh;
+    background-color: black;
+}
+
+.orange{
+    color: rgb(142, 89, 16);
+}
+
+.founder{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    gap: 5%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+.position{
+    opacity: 0.6;
+}
+.founder-detail-para{
+    width: 80%;
+    margin: auto;
+    margin-top: 1rem;
+}
+.photo{
+    width: 35%;
+    object-fit: cover;
+}
+
+
+@media (min-width: 200px) and (max-width: 450px) {
+    .banner {
+        height: 80vh;
+    }
+    .banner-heading {
+        font-size: 2rem;
+        padding-top: 8vh;
+    }
+    .banner-text {
+        font-size: 0.8rem;
+        width: 100%;
+    }
+    .banner-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .icon{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .heading{
+        font-size: 1.5rem;
+        width: 90%;
+    }
+
+    .heading-small{
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .share-details{
+        width: 90%;
+    }
+
+    .join{
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .instruction-container{
+        margin-left: 5%;
+        width: 90%;
+    }
+    .instruction-container-content{
+        width: 100%;
+    }
+    .line{
+        min-height: 20vh;
+    }
+
+    .founder{
+        flex-direction: column;
+        align-items: center;
+    }
+    .photo{
+        width: 100%;
+    }
+    .founder-detail-para{
+        width: 90%;
+    }
+}
+
+
+@media (min-width: 450px) and (max-width: 600px) {
+    .banner {
+        height: 85vh;
+    }
+    .banner-heading {
+        font-size: 2.5rem;
+        padding-top: 9vh;
+    }
+    .banner-text {
+        font-size: 1rem;
+        width: 95%;
+    }
+    .banner-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+    }
+    .icon{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .heading{
+        font-size: 2rem;
+        width: 95%;
+    }
+    .heading-small{
+        width: 95%;
+        font-size: 1.2rem;
+    }
+    .share-details,
+    .join{
+        width: 95%;
+    }
+    .instruction-container{
+        margin-left: 7.5%;
+        width: 95%;
+    }
+    .instruction-container-content{
+        width: 100%;
+    }
+    .line{
+        min-height: 30vh;
+    }
+    .founder{
+        flex-direction: column;
+        align-items: center;
+    }
+    .photo{
+        width: 100%;
+    }
+    .founder-detail-para{
+        width: 95%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    .banner {
+        height: 90vh;
+    }
+    .banner-heading {
+        font-size: 3rem;
+        padding-top: 10vh;
+    }
+    .banner-text {
+        font-size: 1.2rem;
+        width: 80%;
+    }
+    .banner-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+    }
+    .icon{
+        width: 3rem;
+        height: 3rem;
+    }
+    .heading{
+        font-size: 2.5rem;
+        width: 80%;
+    }
+    .heading-small{
+        width: 80%;
+        font-size: 1.5rem;
+    }
+    .share-details,
+    .join{
+        width: 80%;
+    }
+    .instruction-container{
+        margin-left: 10%;
+        width: 80%;
+    }
+    .instruction-container-content{
+        width: 100%;
+    }
+    .line{
+        min-height: 40vh;
+    }
+    .founder{
+        flex-direction: row;
+        align-items: center;
+    }
+    .photo{
+        width: 50%;
+    }
+    .founder-detail-para{
+        width: 80%;
+    }
+}
+
+

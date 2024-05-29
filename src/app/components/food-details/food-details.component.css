@@ -1,0 +1,47 @@
+.food-details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+img{
+    flex: 0;
+    max-width: 30rem;
+}
+.food-info{
+    flex: 1;
+}
+input{
+    max-width: 100px;
+}
+
+.button {
+    outline: none;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    background-color: rgb(110, 158, 193);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.button:hover{
+    background-color: rgb(92, 140, 175);
+}
+
+@media screen and (max-width: 700px) {
+    .food-details {
+        flex-direction: column;
+    } 
+}
+
+@media screen and (max-width: 500px) {
+    img{
+        max-width: 100%;
+    }
+}
+

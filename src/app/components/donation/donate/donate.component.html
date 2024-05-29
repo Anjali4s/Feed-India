@@ -1,0 +1,81 @@
+<div class="container-fluid px-5">
+    <h2 class="text-center">Donate for #ZeroHunger</h2>
+    <blockquote class="blockquote text-center">
+        <p class="mb-0">" If you can’t feed a hundred people, then feed just one"</p>
+        <br>
+        <footer class="blockquote-footer"><cite title="Source Title">Mother Teresa</cite></footer>
+    </blockquote>
+    <p class="text-center w-75 mx-auto width">Most cities in India have large landfills being filled up with edible food waste. Some cities’ food waste is
+        actually 97% of the total solid waste. India wastes nearly 67 million and It amounts to Rs93,000 cr worth of
+        food, which means it can feed the most populated state of Bihar for a complete year. In India, the household
+        food waste estimate is 50 kg per capita per year, or 68,760,163 tonnes a year. Think twice before you waste
+        donate for <strong>#zerohunger</strong>.</p>
+
+    <div class="d-flex flex-column flex-md-row bd-highlight mb-10 mx-auto">
+
+
+
+        <div class="p-2 bd-highlight col-12 col-md-6 form">
+
+            <p class="h4 text-center">Fill this form to donate food</p>
+
+            <form class="w-75 width mx-auto" [formGroup]="foodForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="foodName">Food Name</label>
+                    <input type="text" class="form-control" id="foodName" placeholder="Enter food name" formControlName="foodName">
+                </div>
+                <div class="form-group">
+                    <label for="foodType">Food Type</label>
+                    <select class="form-control" id="foodType" formControlName="foodType">
+                        <option *ngFor="let foodTypeKey of foodTypes" [value]="foodTypeKey">{{foodTypeKey}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" placeholder="Enter city" formControlName="city">
+                </div>
+                <div class="form-group">
+                    <label for="pickupDate">Pickup Date</label>
+                    <input type="date" class="form-control" id="pickupDate" formControlName="pickupDate">
+                </div>
+                <div class="form-group">
+                    <label for="pickupTime">Pickup Time</label>
+                    <input type="time" class="form-control" id="pickupTime" formControlName="pickupTime">
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" class="form-control" id="amount" placeholder="Enter amount" formControlName="amount">
+                </div>
+                <div class="form-group">
+                    <label for="pickupAddress">Pickup Address</label>
+                    <input type="text" class="form-control" id="pickupAddress" placeholder="Enter pickup address" formControlName="pickupAddress">
+                </div>
+                <button type="submit" class="button mt-3 mx-auto" [disabled]="!foodForm.valid">Submit</button>
+            </form>
+            
+        </div>
+
+        <div class="p-2 bd-highlight col-12 col-md-6">
+            <img src="../../../assets/donate-image.png" class="img-fluid rounded mx-auto" alt="Responsive image" />
+            <p class="text-muted">To help us be able to achieve our endeavour, we request you to support us in financial or physical terms. the finances would go a long way in providing the infrastructure needed, the delivery vans, storage facility and staffing</p>
+            <button class="button mt-3" (click)="open(content)">Donate Money</button>
+        </div>
+
+    </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <button type="button" class="close modal-cancel" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <input type="number" class="form-control" [(ngModel)]="amount">
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="button" (click)="completeTransaction()" [disabled]="amount===0">Pay</button>
+  </div>
+</ng-template>
+
+
